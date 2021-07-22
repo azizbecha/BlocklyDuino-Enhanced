@@ -72,6 +72,12 @@
 
         <script src="code.js"></script>
         <script src="common.js"></script>
+        
+        <script>
+            window.onbeforeunload = function(event) {
+                return confirm("Are you sure you want to reload the page ? If yes, the blocks will be discarded.");
+            }
+        </script>
 
     </head>
     <body>
