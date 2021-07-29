@@ -88,6 +88,9 @@
     // For Safari
     return 'Are you Sure ou want to quit BlocklyDuino Enhanced without saving?';
 };
+            
+            window.addEventListener('beforeunload', function (e) { e.preventDefault(); e.returnValue = ''; });
+            
         </script>
 
     </head>
