@@ -77,6 +77,17 @@
             window.onbeforeunload = function(event) {
                 return confirm("Are you sure you want to reload the page ? If yes, the blocks will be discarded.");
             }
+            function onBeforeUnload(e) {
+               if (thereAreUnsavedChanges()) {
+               e.preventDefault();
+               e.returnValue = '';
+               return;
+             }
+
+           delete e['returnValue'];
+      }
+
+window.addEventListener('beforeunload', onBeforeUnload);
         </script>
 
     </head>
