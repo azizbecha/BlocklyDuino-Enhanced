@@ -74,7 +74,7 @@
         <script src="common.js"></script>
         
         <script>
-            window.onbeforeunload = function(event) {
+         /*   window.onbeforeunload = function(event) {
                 return confirm("Are you sure you want to reload the page ? If yes, the blocks will be discarded.");
             }
             window.onbeforeunload = function (e) {
@@ -89,12 +89,16 @@
     return 'Are you Sure ou want to quit BlocklyDuino Enhanced without saving?';
 };
             
-            window.addEventListener('beforeunload', function (e) { e.preventDefault(); e.returnValue = ''; });
+            window.addEventListener('beforeunload', function (e) { e.preventDefault(); e.returnValue = ''; });*/
+            
+            function dontLeave() {
+      return "Are you Sure ou want to quit BlocklyDuino Enhanced without saving?";
+    }
             
         </script>
 
     </head>
-    <body>
+    <body onbeforeunload="return dontLeave()">
         <table width="100%" height="100%">
             <tr>
                 <td>
