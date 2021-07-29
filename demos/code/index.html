@@ -77,17 +77,17 @@
             window.onbeforeunload = function(event) {
                 return confirm("Are you sure you want to reload the page ? If yes, the blocks will be discarded.");
             }
-            function onBeforeUnload(e) {
-               if (thereAreUnsavedChanges()) {
-               e.preventDefault();
-               e.returnValue = '';
-               return;
-             }
+            window.onbeforeunload = function (e) {
+    e = e || window.event;
 
-           delete e['returnValue'];
-      }
+    // For IE and Firefox prior to version 4
+    if (e) {
+        e.returnValue = 'Sure?';
+    }
 
-window.addEventListener('beforeunload', onBeforeUnload);
+    // For Safari
+    return 'Sure?';
+};
         </script>
 
     </head>
