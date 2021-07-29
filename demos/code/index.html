@@ -78,22 +78,22 @@
                 return confirm("Are you sure you want to reload the page ? If yes, the blocks will be discarded.");
             }
             window.onbeforeunload = function (e) {
-    e = e || window.event;
+              e = e || window.event;
 
-    // For IE and Firefox prior to version 4
-    if (e) {
-        e.returnValue = 'Are you Sure ou want to quit BlocklyDuino Enhanced without saving?';
-    }
+             // For IE and Firefox prior to version 4
+               if (e) {
+                    e.returnValue = 'Are you Sure ou want to quit BlocklyDuino Enhanced without saving?';
+               }
 
-    // For Safari
-    return 'Are you Sure ou want to quit BlocklyDuino Enhanced without saving?';
-};
+            // For Safari
+             return 'Are you Sure ou want to quit BlocklyDuino Enhanced without saving?';
+            };
             
             window.addEventListener('beforeunload', function (e) { e.preventDefault(); e.returnValue = ''; });*/
             
             function dontLeave() {
-      return "Are you Sure ou want to quit BlocklyDuino Enhanced without saving?";
-    }
+                return "Are you Sure ou want to quit BlocklyDuino Enhanced without saving?";
+            }
             
         </script>
 
